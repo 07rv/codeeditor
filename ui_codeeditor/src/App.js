@@ -1,7 +1,29 @@
 import "./App.css";
 
+import Home from "../src/pages/Home";
+import EditorPage from "../src/pages/EditorPage";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <>Not Found</>,
+  },
+  {
+    path: "editor/:id",
+    element: <EditorPage />,
+    errorElement: <>Not Found</>,
+  },
+]);
+
 function App() {
-  return <div>React</div>;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
