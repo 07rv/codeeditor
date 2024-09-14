@@ -1,5 +1,3 @@
-import "./App.css";
-
 import Home from "../src/pages/Home";
 import EditorPage from "../src/pages/EditorPage";
 
