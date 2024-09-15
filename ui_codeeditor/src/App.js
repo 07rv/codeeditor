@@ -2,17 +2,20 @@ import Home from "../src/pages/Home";
 import EditorPage from "../src/pages/EditorPage";
 import Toaster from "./components/Toaster";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <>Not Found</>,
   },
   {
     path: "editor/:id",
     element: <EditorPage />,
-    errorElement: <>Not Found</>,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
