@@ -1,6 +1,9 @@
 import { useState } from "react";
 
+import useHandler from "../utlities/NotificationHandler";
+
 const Home = () => {
+  const inputHandlerToaster = useHandler();
   const [inputField, setInputField] = useState({
     name: "",
     roomId: "",
@@ -11,6 +14,11 @@ const Home = () => {
   });
 
   const inputHandler = (name, value) => {
+    inputHandlerToaster({
+      open: true,
+      message: "wsdfrtgy",
+      success: true,
+    });
     setInputField((prevState) => ({
       ...prevState,
       [name]: value,

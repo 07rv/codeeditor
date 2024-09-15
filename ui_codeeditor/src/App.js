@@ -1,6 +1,6 @@
 import Home from "../src/pages/Home";
 import EditorPage from "../src/pages/EditorPage";
-
+import Toaster from "./components/Toaster";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -20,6 +20,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Toaster />
     </>
   );
 }
