@@ -44,6 +44,12 @@ const Home = () => {
   const createRoom = () => {
     const roomId = uuidv4();
     inputHandler("roomId", roomId);
+    inputHandlerToaster({
+      open: true,
+      message: "Created a new room",
+      success: true,
+      position: "top-right",
+    });
   };
 
   return (

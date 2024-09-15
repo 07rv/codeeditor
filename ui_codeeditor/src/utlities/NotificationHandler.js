@@ -11,6 +11,7 @@ const useHandler = () => {
     info = false,
     success = false,
     open = true,
+    position = "bottom-right",
   }) => {
     dispatch(
       setToaster({
@@ -20,6 +21,7 @@ const useHandler = () => {
         info: info,
         success: success,
         open: open,
+        position: position,
       })
     );
   };

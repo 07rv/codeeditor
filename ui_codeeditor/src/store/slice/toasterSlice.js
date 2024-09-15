@@ -11,6 +11,7 @@ export const toasterSlice = createSlice({
         info: false,
         success: false,
         open: false,
+        position: "bottom-right",
       },
     ],
   },
