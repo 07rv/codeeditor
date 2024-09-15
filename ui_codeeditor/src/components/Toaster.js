@@ -20,6 +20,20 @@ const Toaster = () => {
     );
   }, [dispatch]);
 
+  const getPositionClasses = () => {
+    switch (toasterInfo.position) {
+      case "top-left":
+        return "top-8 left-16";
+      case "top-right":
+        return "top-8 right-16";
+      case "bottom-left":
+        return "bottom-8 left-16";
+      case "bottom-right":
+      default:
+        return "bottom-8 right-16";
+    }
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       closeToaster();
@@ -31,9 +45,9 @@ const Toaster = () => {
   return (
     <>
       <div
-        className={`space-y-3 fixed bottom-8 right-16 z-50 w-64 ${
+        className={`space-y-3 fixed z-50 w-64 ${
           toasterInfo.open ? "" : "hidden"
-        }`}
+        } ${getPositionClasses()}`}
       >
         <div
           className="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg"
