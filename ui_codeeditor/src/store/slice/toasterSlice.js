@@ -21,14 +21,6 @@ export const toasterSlice = createSlice({
   },
 });
 
-export const {
-  setToaster,
-  setToasterMessage,
-  setToasterError,
-  setToasterWarning,
-  setToasterInfo,
-  setToasterSuccess,
-  setToasterOpen,
-} = toasterSlice.actions;
+export const { setToaster } = toasterSlice.actions;
 
 export default toasterSlice.reducer;

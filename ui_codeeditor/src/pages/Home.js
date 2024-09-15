@@ -8,34 +8,11 @@ const Home = () => {
     name: "",
     roomId: "",
   });
-  const [errorField, setErrorField] = useState({
-    name: "",
-    roomId: "",
-  });
 
   const inputHandler = (name, value) => {
-    inputHandlerToaster({
-      open: true,
-      message: "wsdfrtgy",
-      success: true,
-    });
     setInputField((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
-
-    if (errorField[name]) {
-      setErrorField((prevState) => ({
-        ...prevState,
-        [name]: "",
-      }));
-    }
-  };
-
-  const setErrorMessage = (name, message) => {
-    setErrorField((prevState) => ({
-      ...prevState,
-      [name]: message,
     }));
   };
 
@@ -48,11 +25,14 @@ const Home = () => {
 
     Object.keys(inputField).forEach((field) => {
       if (!inputField[field]) {
-        setErrorMessage(field, validations[field]);
+        inputHandlerToaster({
+          open: true,
+          message: validations[field],
+          error: true,
+        });
         hasError = true;
       }
     });
-
     return hasError;
   };
 
@@ -84,11 +64,6 @@ const Home = () => {
             value={inputField.name}
             onChange={(e) => inputHandler(e.target.name, e.target.value)}
           />
-          {errorField.name && (
-            <div className="text-red-600">
-              <small>{errorField.name}</small>
-            </div>
-          )}
           <input
             type="text"
             name="roomId"
@@ -98,11 +73,6 @@ const Home = () => {
             value={inputField.roomId}
             onChange={(e) => inputHandler(e.target.name, e.target.value)}
           />
-          {errorField.roomId && (
-            <div className="mt-1 text-red-600">
-              <small>{errorField.roomId}</small>
-            </div>
-          )}
         </div>
         <div className="text-center mt-6">
           <button
