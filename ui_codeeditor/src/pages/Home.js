@@ -2,7 +2,10 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import useHandler from "../utlities/NotificationHandler";
 
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const navigate = useNavigate();
   const inputHandlerToaster = useHandler();
   const [inputField, setInputField] = useState({
     name: "",
@@ -38,6 +41,17 @@ const Home = () => {
 
   const submitButton = async () => {
     if (!checkAndSetValidationsErrors()) {
+      navigate(`/editor/${inputField.roomId}`, {
+        state: {
+          name: inputField.name,
+        },
+      });
+    }
+  };
+
+  const handleInputEnter = (e) => {
+    if (e.code === "Enter") {
+      submitButton();
     }
   };
 
@@ -79,6 +93,7 @@ const Home = () => {
             className="block text-sm py-3 px-4 rounded-lg w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
             value={inputField.name}
             onChange={(e) => inputHandler(e.target.name, e.target.value)}
+            onKeyUp={handleInputEnter}
           />
           <input
             type="text"
@@ -88,6 +103,7 @@ const Home = () => {
             className="block text-sm py-3 px-4 rounded-lg w-full border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
             value={inputField.roomId}
             onChange={(e) => inputHandler(e.target.name, e.target.value)}
+            onKeyUp={handleInputEnter}
           />
         </div>
 
