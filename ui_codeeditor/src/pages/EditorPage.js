@@ -1,78 +1,51 @@
 const EditorPage = () => {
   return (
     <>
-      <div className="xl:rounded-r transform xl:translate-x-0 ease-in-out transition duration-500 flex flex-col justify-center items-center h-full w-full sm:w-64 bg-gray-900">
-        <div className="hidden xl:flex justify-start p-6 items-center space-x-3">
-          <p className="text-2xl leading-6 text-white">OvonRueden</p>
-        </div>
-        <div className="mt-6 flex flex-col items-center pl-4 w-full border-gray-600 border-b space-y-3 pb-5">
-          <button className="flex justify-start items-center space-x-6 w-full focus:outline-none focus:text-indigo-400 text-white rounded">
-            <p className="text-base leading-4">Connected</p>
-          </button>
-        </div>
-        <div className="flex flex-col items-center px-6 border-b border-gray-600 w-full">
-          <button className="focus:outline-none focus:text-indigo-400 text-left text-white flex justify-between items-center w-full py-5 space-x-14">
-            <p className="text-sm leading-5 uppercase">User</p>
+      <div class="relative bg-slate-900 w-screen h-screen pattern">
+        <nav class="z-20 flex shrink-0 grow-0 justify-around gap-4 border-t p-2.5 shadow-lg backdrop-blur-lg border-slate-600/60 bg-slate-800/50 fixed top-2/4 -translate-y-2/4 left-6 min-h-[auto] min-w-[64px] flex-col rounded-lg border">
+          <p class="flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 bg-sky-900 text-sky-50">
             <svg
-              id="icon1"
-              className="transform"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 shrink-0"
             >
               <path
-                d="M18 15L12 9L6 15"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
               />
             </svg>
-          </button>
-          <div className="flex flex-col items-center w-full md:w-auto pb-5">
-            {Array(3)
-              .fill(null)
-              .map((_, index) => (
-                <button
-                  key={index}
-                  className="flex items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2 w-full md:w-52"
-                >
-                  <svg
-                    className="fill-stroke"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 10L11 14L17 20L21 4L3 11L7 13L9 19L12 15"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <p className="text-base leading-4">Messages</p>
-                </button>
-              ))}
-          </div>
-        </div>
 
-        <div className="flex flex-col justify-between items-center h-full px-6 w-full space-y-32">
-          <div className="flex flex-col items-center mt-5 px-6 border-b border-gray-600 w-full">
-            <div className="flex flex-col items-start w-full md:w-auto pb-5">
-              <button className="flex items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2 w-full md:w-52">
-                <p className="text-base leading-4">Copy Room Id</p>
-              </button>
-              <button className="flex items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2 w-full md:w-52">
-                <p className="text-base leading-4">Leave</p>
-              </button>
-            </div>
-          </div>
-        </div>
+            <small class="text-center text-xs font-medium">Rohit</small>
+          </p>
+
+          <hr class="border-gray-700/60" />
+
+          <a
+            href="/"
+            class="flex h-16 w-16 flex-col items-center justify-center gap-1 text-gray-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"
+              />
+            </svg>
+
+            <small className="text-xs font-medium">Home</small>
+          </a>
+        </nav>
       </div>
     </>
   );
