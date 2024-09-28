@@ -4,9 +4,12 @@ import useHandler from "../utlities/NotificationHandler";
 
 import { useNavigate } from "react-router-dom";
 
+import ProfileListHandler from "../utlities/ProfileListHandler";
+
 const Home = () => {
   const navigate = useNavigate();
   const inputHandlerToaster = useHandler();
+  const { addUserHandler } = ProfileListHandler();
   const [inputField, setInputField] = useState({
     name: "",
     roomId: "",
@@ -41,6 +44,10 @@ const Home = () => {
 
   const submitButton = async () => {
     if (!checkAndSetValidationsErrors()) {
+      addUserHandler({
+        id: 1,
+        name: "rohit",
+      });
       navigate(`/editor/${inputField.roomId}`, {
         state: {
           name: inputField.name,

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../store/slice/usersSlice";
 
-const userListHandler = () => {
+const ProfileListHandler = () => {
   const dispatch = useDispatch();
 
   const addUserHandler = ({ user }) => {
@@ -19,4 +19,4 @@ const userListHandler = () => {
   return { addUserHandler, removeUserHandler };
 };
 
-export default userListHandler;
+export default ProfileListHandler;
