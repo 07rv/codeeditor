@@ -11,11 +11,6 @@ const SideBar = ({ children }) => {
   const [showUser, setShowUser] = useState(false);
   const timeoutRef = useRef(null); // To store the timeout
 
-  const [users, setUsers] = useState([
-    { id: 1, name: "Rohit" },
-    { id: 2, name: "Rohit1" },
-  ]);
-
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current); // Clear any existing timeout
@@ -66,7 +61,6 @@ const SideBar = ({ children }) => {
 
       {showUser && (
         <Users
-          users={users}
           handleMouseEnter={handleMouseEnter}
           handleMouseLeave={handleMouseLeave}
         />

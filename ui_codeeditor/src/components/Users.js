@@ -1,6 +1,9 @@
 import Profile from "./Profile";
 
-const Users = ({ handleMouseEnter, handleMouseLeave, users = [] }) => {
+import { useSelector } from "react-redux";
+
+const Users = ({ handleMouseEnter, handleMouseLeave }) => {
+  const users = useSelector((state) => state.users.value);
   return (
     users.length > 0 && (
       <div
