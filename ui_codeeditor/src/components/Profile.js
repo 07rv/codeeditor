@@ -4,13 +4,15 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/solid";
 
-const Profile = () => {
+const Profile = ({ user }) => {
   return (
     <>
       <div class="flex w-full items-center justify-between space-x-6 p-6">
         <div class="flex-1 truncate">
           <div class="flex items-center space-x-3">
-            <h3 class="truncate text-sm font-medium text-gray-900">Name</h3>
+            <h3 class="truncate text-sm font-medium text-gray-900">
+              {user?.name}
+            </h3>
           </div>
           <p class="mt-1 truncate text-sm text-gray-500">Acount owner</p>
         </div>

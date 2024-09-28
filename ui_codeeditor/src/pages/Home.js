@@ -9,7 +9,7 @@ import ProfileListHandler from "../utlities/ProfileListHandler";
 const Home = () => {
   const navigate = useNavigate();
   const inputHandlerToaster = useHandler();
-  const { addUserHandler } = ProfileListHandler();
+  const { addUserHandler, removeAllUserHandler } = ProfileListHandler();
   const [inputField, setInputField] = useState({
     name: "",
     roomId: "",
@@ -44,9 +44,10 @@ const Home = () => {
 
   const submitButton = async () => {
     if (!checkAndSetValidationsErrors()) {
+      removeAllUserHandler();
       addUserHandler({
-        id: 1,
-        name: "rohit",
+        id: inputField.roomId,
+        name: inputField.name,
       });
       navigate(`/editor/${inputField.roomId}`, {
         state: {
