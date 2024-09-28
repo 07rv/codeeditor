@@ -3,7 +3,6 @@ import EditorPage from "../src/pages/EditorPage";
 import Toaster from "./components/Toaster";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import SideBar from "./components/SideBar";
 
 const router = createBrowserRouter([
   {
@@ -12,11 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "editor/:id",
-    element: (
-      <SideBar>
-        <EditorPage />
-      </SideBar>
-    ),
+    element: <EditorPage />,
   },
   {
     path: "*",
