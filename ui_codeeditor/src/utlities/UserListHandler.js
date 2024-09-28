@@ -1,29 +1,11 @@
 import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../store/slice/userSlice";
+import { addUser, removeUser } from "../store/slice/usersSlice";
 
 const userListHandler = () => {
   const dispatch = useDispatch();
 
-  const addUserHandler = ({
-    message = "",
-    error = false,
-    warning = false,
-    info = false,
-    success = false,
-    open = true,
-    position = "bottom-right",
-  }) => {
-    dispatch(
-      addUser({
-        message: message,
-        error: error,
-        warning: warning,
-        info: info,
-        success: success,
-        open: open,
-        position: position,
-      })
-    );
+  const addUserHandler = ({ user }) => {
+    dispatch(addUser(user));
   };
 
   const removeUserHandler = ({ id }) => {
